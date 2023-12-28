@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  all: unset;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  line-height: 0;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+textarea {
+  overflow: auto;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 2.4rem;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+}
+
+body {
+  background-color: hsl(185, 41%, 84%);
+}
+
+label {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 0.8em;
+  color: hsl(186, 14%, 43%);
+}
+
+input {
+  width: 100%;
+  padding: 1rem 3rem;
+  text-align: right;
+  color: hsl(183, 100%, 15%);
+  background-color: hsl(189, 41%, 97%);
+  border-radius: 10px;
+  border: none;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: 3rem;
+}
+input:hover {
+  cursor: pointer;
+}
+input:active, input:focus {
+  outline: 2px solid hsl(172, 67%, 45%);
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button,
+input[type=number] {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  max-height: 200px;
+  padding: 3rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "bil" "tip" "peo" "res";
+  gap: 3rem;
+  max-width: 920px;
+  padding: 3rem;
+  background-color: hsl(0, 0%, 100%);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+@media screen and (min-width: 700px) {
+  .icon {
+    margin-bottom: 3rem;
+  }
+  .container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "bil res" "tip res" "peo res";
+    border-radius: 30px;
+  }
+}
+.bill {
+  grid-area: bil;
+}
+.bill #bill__field {
+  background-image: url("../../images/icon-dollar.svg");
+}
+
+.result, .tip__btn {
+  background-color: hsl(183, 100%, 15%);
+  color: hsl(189, 41%, 97%);
+}
+
+.result .reset, .tip__btn--sel {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+
+.result .reset:hover, .tip__btn:hover {
+  background-color: #3fd9c5;
+}
+
+.tip {
+  grid-area: tip;
+}
+.tip__btn-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.tip__btn {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.tip .tip__custom {
+  padding-inline: 0rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 700px) {
+  .tip__btn-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.people {
+  grid-area: peo;
+  display: grid;
+  grid-template-areas: "lab err" "inp inp";
+}
+.people label {
+  grid-area: "lab";
+}
+.people #people__field {
+  grid-area: "inp";
+  grid-column: span 2;
+  background-image: url("../../images/icon-person.svg");
+}
+.people #people__field.err {
+  border: 2px solid #e37663;
+}
+.people__err {
+  grid-area: "err";
+  font-size: 0.8em;
+  text-align: right;
+  color: #e37663;
+}
+
+.result {
+  grid-area: res;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5rem;
+  padding: 3rem;
+  border-radius: 1rem;
+}
+.result__part {
+  display: grid;
+  grid-template-areas: "titl amou" "subt amnt";
+}
+.result .title {
+  grid-area: titl;
+  font-size: 0.8em;
+}
+.result .subtitle {
+  grid-area: subt;
+  font-size: 0.7em;
+  color: hsl(186, 14%, 43%);
+}
+.result .amount {
+  grid-area: amnt;
+  grid-row: span 2;
+  align-self: center;
+  text-align: right;
+  font-size: 1.5em;
+  color: hsl(172, 67%, 45%);
+}
+.result .reset {
+  margin-top: auto;
+  padding-block: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+}
+.result .reset:active, .result .reset:focus {
+  outline: none;
+}
+.result .reset.initial {
+  background-color: #0d686d;
+}
+.result .reset.initial:hover {
+  cursor: default;
+}
+
+/*# sourceMappingURL=style.css.map */

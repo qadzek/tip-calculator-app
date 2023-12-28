@@ -1,0 +1,40 @@
+@use "../utils/variables" as *;
+@use "../utils/extend";
+
+$radius: 1rem;
+
+.tip {
+  grid-area: tip;
+
+  &__btn-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  &__btn {
+    text-align: center;
+    padding: 1rem;
+    border-radius: $radius;
+    @extend %dark;
+
+    &:hover {
+      @extend %lighter;
+    }
+  }
+
+  &__btn--sel {
+    @extend %light;
+  }
+
+  .tip__custom {
+    padding-inline: 0rem;
+    text-align: center;
+  }
+}
+
+@media #{$dev-l} {
+  .tip__btn-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

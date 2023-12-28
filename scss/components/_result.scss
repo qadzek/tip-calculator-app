@@ -1,0 +1,68 @@
+@use "../utils/variables" as *;
+@use "../utils/extend";
+
+.result {
+  grid-area: res;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5rem;
+
+  padding: 3rem;
+  border-radius: 1rem;
+  @extend %dark;
+
+  &__part {
+    display: grid;
+    grid-template-areas:
+      "titl amou"
+      "subt amnt";
+  }
+
+  .title {
+    grid-area: titl;
+    font-size: 0.8em;
+  }
+
+  .subtitle {
+    grid-area: subt;
+    font-size: 0.7em;
+    color: $clr-dark-grayish-cyan;
+  }
+
+  .amount {
+    grid-area: amnt;
+    grid-row: span 2;
+    align-self: center;
+    text-align: right;
+    font-size: 1.5em;
+    color: $clr-strong-cyan;
+  }
+
+  .reset {
+    margin-top: auto;
+    padding-block: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    @extend %light;
+
+    &:hover {
+      @extend %lighter;
+    }
+
+    &:active,
+    &:focus {
+      outline: none;
+    }
+
+    &.initial {
+      background-color: #0d686d;
+
+      &:hover {
+        cursor: default;
+      }
+    }
+  }
+}

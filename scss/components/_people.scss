@@ -1,0 +1,34 @@
+@use "../base/base" as *;
+
+$clr-err: desaturate(tomato, 30%);
+
+.people {
+  grid-area: peo;
+
+  display: grid;
+  grid-template-areas:
+    "lab err"
+    "inp inp";
+
+  label {
+    grid-area: "lab";
+  }
+
+  #people__field {
+    grid-area: "inp";
+    grid-column: span 2;
+
+    background-image: url("../../images/icon-person.svg");
+
+    &.err {
+      border: 2px solid $clr-err;
+    }
+  }
+
+  &__err {
+    grid-area: "err";
+    font-size: $fs-label;
+    text-align: right;
+    color: $clr-err;
+  }
+}

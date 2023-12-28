@@ -1,0 +1,10 @@
+@use "./base/reset";
+@use "./base/typography";
+@use "./base/base";
+
+@use "./layout/layout";
+
+@use "./components/bill";
+@use "./components/tip";
+@use "./components/people";
+@use "./components/result";

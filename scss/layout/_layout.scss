@@ -1,0 +1,48 @@
+@use "../utils/variables" as *;
+
+$radius: 30px;
+
+body {
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  max-height: 200px;
+  padding: 3rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "bil"
+    "tip"
+    "peo"
+    "res";
+  gap: 3rem;
+
+  max-width: 920px;
+  padding: 3rem;
+  background-color: $clr-white;
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+}
+
+@media #{$dev-l} {
+  .icon {
+    margin-bottom: 3rem;
+  }
+
+  .container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "bil res"
+      "tip res"
+      "peo res";
+    border-radius: $radius;
+  }
+}

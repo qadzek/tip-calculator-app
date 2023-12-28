@@ -1,0 +1,15 @@
+@use "../utils/variables" as *;
+
+%dark {
+  background-color: $clr-very-dark-cyan;
+  color: $clr-very-light-grayish-cyan;
+}
+
+%light {
+  background-color: $clr-strong-cyan;
+  color: $clr-very-dark-cyan;
+}
+
+%lighter {
+  background-color: lighten($clr-strong-cyan, 10%);
+}

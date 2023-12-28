@@ -1,0 +1,50 @@
+@use "../utils/variables" as *;
+
+$fs-label: 0.8em;
+
+body {
+  background-color: $clr-light-grayish-cyan;
+}
+
+label {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: $fs-label;
+  color: $clr-dark-grayish-cyan;
+}
+
+input {
+  width: 100%;
+  padding: 1rem 3rem;
+  text-align: right;
+
+  color: $clr-very-dark-cyan;
+  background-color: $clr-very-light-grayish-cyan;
+
+  border-radius: 10px;
+  border: none;
+
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: 3rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active,
+  &:focus {
+    outline: 2px solid $clr-strong-cyan;
+  }
+}
+
+// Hide up and down arrows
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"] {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
