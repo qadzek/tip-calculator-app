@@ -1,4 +1,4 @@
-@use "../base/base" as *;
+@use '../base/base' as *;
 
 $clr-err: desaturate(tomato, 30%);
 
@@ -7,18 +7,18 @@ $clr-err: desaturate(tomato, 30%);
 
   display: grid;
   grid-template-areas:
-    "lab err"
-    "inp inp";
+    'lab err'
+    'inp inp';
 
   label {
-    grid-area: "lab";
+    grid-area: 'lab';
   }
 
   #people__field {
-    grid-area: "inp";
+    grid-area: 'inp';
     grid-column: span 2;
 
-    background-image: url("../../images/icon-person.svg");
+    background-image: url('./images/icon-person.svg');
 
     &.err {
       border: 2px solid $clr-err;
@@ -26,7 +26,7 @@ $clr-err: desaturate(tomato, 30%);
   }
 
   &__err {
-    grid-area: "err";
+    grid-area: 'err';
     font-size: $fs-label;
     text-align: right;
     color: $clr-err;

@@ -158,7 +158,7 @@ body {
   grid-area: bil;
 }
 .bill #bill__field {
-  background-image: url("../../images/icon-dollar.svg");
+  background-image: url("./images/icon-dollar.svg");
 }
 
 .result, .tip__btn {
@@ -209,7 +209,7 @@ body {
 .people #people__field {
   grid-area: "inp";
   grid-column: span 2;
-  background-image: url("../../images/icon-person.svg");
+  background-image: url("./images/icon-person.svg");
 }
 .people #people__field.err {
   border: 2px solid #e37663;
